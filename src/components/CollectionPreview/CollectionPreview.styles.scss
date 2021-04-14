@@ -1,0 +1,20 @@
+.collection {
+	margin-top: 120px;
+	h1 {
+		font-size: 3em;
+		text-align: center;
+	}
+	.collection-container {
+		display: flex;
+		flex-direction: column;
+		flex-flow: row wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media (min-width: 700px) {
+		.collection-container {
+			flex-direction: row;
+		}
+	}
+}
