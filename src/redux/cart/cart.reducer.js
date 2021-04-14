@@ -1,5 +1,5 @@
-import { ADD_ITEM_TO_CART } from './cart.types';
-import { addCartItem } from './cart.utils';
+import { ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART } from './cart.types';
+import { addCartItem, removeCartItem } from './cart.utils';
 
 const initialState = {
 	cartItems: [],
@@ -14,6 +14,12 @@ const cartReducer = (state = initialState, action) => {
 			return {
 				...state,
 				cartItems: addCartItem(cartItems, payload),
+			};
+		}
+		case REMOVE_ITEM_FROM_CART: {
+			return {
+				...state,
+				cartItems: removeCartItem(cartItems, payload),
 			};
 		}
 		default:
