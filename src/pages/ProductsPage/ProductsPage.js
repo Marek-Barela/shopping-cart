@@ -1,8 +1,12 @@
 import React from 'react';
-import { PageWrapper } from 'components';
+import { PageWrapper, CollectionPreview } from 'components';
 
 const ProductsPage = () => {
-	return <PageWrapper />;
+	return (
+		<PageWrapper>
+			<CollectionPreview />
+		</PageWrapper>
+	);
 };
 
 export default ProductsPage;
