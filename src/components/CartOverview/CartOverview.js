@@ -1,4 +1,5 @@
 import React from 'react';
+import { CartPreview } from 'components';
 import { selectCartItems } from 'redux/cart/cart.selector';
 import { connect } from 'react-redux';
 
@@ -19,7 +20,11 @@ const CartOverview = ({ setIsHidden, cartItems }) => {
 					</span>
 				</div>
 				<div className='cart-body'>
-					{cartItems.length ? <div>Preview</div> : <p>Twój koszyk jest pusty</p>}
+					{cartItems.length ? (
+						<CartPreview cartItems={cartItems} />
+					) : (
+						<p>Twój koszyk jest pusty</p>
+					)}
 				</div>
 			</div>
 		</div>

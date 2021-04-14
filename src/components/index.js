@@ -3,3 +3,4 @@ export { Header } from './Header';
 export { CollectionPreview } from './CollectionPreview';
 export { CollectionItem } from './CollectionItem';
 export { CartOverview } from './CartOverview';
+export { CartPreview } from './CartPreview';
