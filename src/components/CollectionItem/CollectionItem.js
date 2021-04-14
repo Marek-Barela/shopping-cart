@@ -1,13 +1,16 @@
 import React from 'react';
 import getNumberAsPrice from 'utils/getNumberAsPrice';
+import { addItemToCart } from 'redux/cart/cart.action';
+import { connect } from 'react-redux';
 
 import './CollectionItem.styles.scss';
 
-const CollectionItem = ({ item }) => {
+const CollectionItem = ({ item, addItemToCart }) => {
 	const { title, cover, price, availability } = item;
 
 	const handleButtonClick = () => {
 		if (!availability) return;
+		addItemToCart(item);
 	};
 
 	return (
@@ -28,4 +31,8 @@ const CollectionItem = ({ item }) => {
 	);
 };
 
-export default CollectionItem;
+const mapDispatchToProps = (dispatch) => ({
+	addItemToCart: (cartItem) => dispatch(addItemToCart(cartItem)),
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);
